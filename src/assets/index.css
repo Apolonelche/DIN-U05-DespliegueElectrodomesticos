@@ -1,0 +1,256 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+body {
+  background-color: var(--azulazul-fondo);
+}
+
+footer {
+  background-color: #181818; 
+  color: var(--negroblanco); 
+  padding: 1rem;
+}
+
+footer p {
+  color: var(--negroblanco);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+
+.contenedor__h1 {
+  font-family: var(--titulo-1-font-family);
+  font-size: var(--titulo-1-font-size);
+  font-style: var(--titulo-1-font-style);
+  font-weight: var(--titulo-1-font-weight);
+  letter-spacing: var(--titulo-1-letter-spacing);
+  line-height: var(--titulo-1-line-height);
+  color: var(--color-primary);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contenedor__h2 {
+  font-family: var(--titulo-2-font-family);
+  font-size: var(--titulo-2-font-size);
+  font-style: var(--titulo-2-font-style);
+  font-weight: var(--titulo-2-font-weight);
+  letter-spacing: var(--titulo-2-letter-spacing);
+  line-height: var(--titulo-2-line-height);
+  color: var(--negrogris);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+
+p{
+  color: var(--negronegro);
+  font-size: var(--texto_normal-bold-font-size);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+
+.listado {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;             
+  justify-content: center; 
+  padding: 20px;
+}
+
+
+/* ================================================================= CARD DETAIL STYLES ========================================================================== */
+/* Contenedor principal para el layout de imagen y texto */
+.card {
+  width: 350px;
+  background-color: var(--negroblanco);
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 16rem;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  font-weight: var(--texto-en-negrita-font-weight);
+  font-size: var(--texto-en-negrita-font-size);
+  color: var(--azulazul);
+  margin: 1rem 1rem 0.25rem 1rem;
+}
+
+.card p {
+  font-weight: var(--texto-peque-o-font-weight);
+  font-size: var(--texto-peque-o-font-size);
+  color: var(--negronegro);
+  margin: 0 1rem 1rem 1rem;
+}
+
+.card_layout {
+    display: flex; /* Habilitar Flexbox */
+    align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+    gap: 20px; /* Espacio entre la imagen y el bloque de texto */
+    max-width: 900px; /* Ancho máximo para la tarjeta completa */
+    margin: 30px auto; /* Centrar la tarjeta en la página y darle margen */
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para la tarjeta */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Estilo para la imagen */
+.card_img {
+    width: 200px; /* Ancho fijo para la imagen del póster */
+    height: auto; /* Mantener la proporción */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la imagen */
+}
+
+/* Contenedor para el título y la descripción */
+.info_card {
+    flex-grow: 1; /* Permite que este div ocupe todo el espacio restante */
+    display: flex; /* También Flexbox para h2 y p */
+    flex-direction: column; /* Apila el h2 y el p */
+    justify-content: flex-start; /* Alinea el contenido al principio (arriba) */
+}
+
+/* Estilo para el título de la película/intérprete */
+.card_title {
+    font-size: 2.2rem; /* Tamaño de fuente más grande */
+    color: #222; /* Color oscuro */
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: left; /* Alineado a la izquierda */
+    border-bottom: 3px solid #ff4500; /* Línea de color debajo del título */
+    padding-bottom: 10px;
+    font-weight: 700; /* Negrita */
+}
+
+/* Estilo para el párrafo de descripción */
+.card_desc {
+    font-size: 1.1rem; /* Un poco más grande para mejor lectura */
+    color: #444;
+    line-height: 1.7;
+    text-align: justify; /* Justificar el texto */
+    margin-bottom: 0;
+}
+
+.volver {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin-top: 3rem;
+  align-self: center;
+  font-weight: 600;
+  transition: 0.25s ease;
+  border: #181818 1px solid;
+  border-radius: 6px;
+  cursor: pointer;
+  
+}
+.volver:hover {
+  color: #fff;
+  background: #181818;
+}
+
+/* ======================================================= NAVBAR STYLES ============================================ */
+.nav {
+  width: 100%;
+  background: #181818;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.nav__logo {
+  color: #fff;
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Botón hamburguesa */
+.nav__menu {
+  display: none;
+  position: absolute;
+  color: var(--negroblanco);
+  font-size: 1.7rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Lista de links */
+.nav__list {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #ffffffcc;
+  font-weight: 500;
+  transition: 0.25s ease;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.nav__link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ======================================================= Responsive ============================================ */
+@media (min-width: 640px) {
+  .contenedor {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .contenedor {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    position: relative;
+  }
+
+  /* Mostrar hamburguesa en móvil */
+  .nav__menu {
+    display: block;
+    top: 10px;
+    right: 15px;
+  }
+
+  /* Lista oculta por defecto */
+  .nav__list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav__list.hidden {
+    display: none;
+  }
+
+  .nav__list.block {
+    display: flex;
+  }
+}
