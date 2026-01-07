@@ -19,7 +19,7 @@ export default function App() {
   const isAuthenticated = true; // Simulación de autenticación
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}> 
       <Header/>
 
       <main style={{ flexGrow: 1 }}>

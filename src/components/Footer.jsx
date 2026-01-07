@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer aria-label="Cabecera principal del sitio">
       {/* Nombre del autor */}
-      <p>Martin Davia Mora</p>
+      <p >Martin Davia Mora</p>
 
       {/* Derechos de autor */}
       <p>© 2025 Mis Electrodomésticos. Todos los derechos reservados.</p>

@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <>
             <h2 className="contenedor__h2">Bienvenidos a mi Página</h2>
-            <p>Esta es la página principal de la aplicación</p>
+            <p className="texto">Esta es la página principal de la aplicación</p>
         </>
     )
 }

@@ -34,7 +34,7 @@ function List({ foto, nombre, children }) {
       </header>
 
       {children && (
-        <p>{children}</p>
+        <p className="texto">{children}</p>
       )}
     </article>
   );

@@ -1,0 +1,51 @@
+import { Meta, Primary, Controls, Story } from "@storybook/addon-docs/blocks";
+import * as ShowDetailsStories from "./ShowDetails.stories.jsx";
+import ShowDetails from "../pages/showDetails";
+
+{/* -------------------------------------------------------- */}
+{/* 1. Definición de Metadata*/}
+{/* -------------------------------------------------------- */}
+
+<Meta of={ShowDetailsStories} />
+
+# 🔎 Página `ShowDetails` (Detalle de Producto)
+
+El componente **`ShowDetails`** es una página completa encargada de renderizar la ficha técnica de un electrodoméstico.
+
+A diferencia de otros componentes visuales simples, este es un **"Smart Component"** (componente conectado) que depende de la URL del navegador para saber qué datos cargar.
+
+## Características Principales
+
+* **Enrutamiento Dinámico:** Utiliza el hook `useParams` (`react-router-dom`) para leer el parámetro `:indice` de la URL (`/details/0`, `/details/1`, etc.).
+* **Carga de Datos:** Con ese índice, busca el objeto correspondiente dentro del array de datos local (`electrodomesticos.js`).
+* **Navegación:** Incluye un botón "Volver" que utiliza `useNavigate` para regresar al historial anterior.
+* **Estilo:** Utiliza su propio estilo dentro de (`assets/index.css`) para la maquetación de la tarjeta (`.card_layout`).
+
+## Integración Técnica
+
+Para que este componente funcione, debe estar envuelto en un sistema de rutas.
+
+**En la aplicación real:**
+El componente espera que la ruta tenga el formato `/details/:indice`.
+
+```jsx
+<Routes>
+   <Route path="/details/:indice" element={<ShowDetails />} />
+</Routes>
+
+```
+
+El componente renderiza un elemento HTML `<article>` que contiene:
+
+1.  **`<figure>` (Imagen):** Contiene la foto del electrodomestico (`<img>`).
+    * Usa `alt` para la accesibilidad (`alt="Foto de [nombre]"`).
+2.  **`<header>` (Nombre):** Contiene el nombre del electrodomestico en un `<h2>`.
+3.  **`<p>` (Descripción):** Muestra la descripción del electrodomestico.
+
+
+## Ejemplos
+### Primer electrodomestico
+<Story of={ShowDetailsStories.FrigorificoSamsung} />
+
+### Electrodomestico con índice 6
+<Story of={ShowDetailsStories.LavadoraHisense} />
