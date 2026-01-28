@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState, useId } from "react";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 /**
  * Nav
@@ -16,6 +18,8 @@ import { useState, useId } from "react";
 export default function Nav() {
     const [open, setOpen] = useState(false); // Estado del menú en móvil
     const menuId = useId(); // ID único para aria-controls y accesibilidad
+    const { userLogged, logout } = useContext(UserContext);
+
 
     return (
         <nav className="nav" role="navigation" aria-label="Menú principal">
@@ -61,6 +65,14 @@ export default function Nav() {
                 >
                     Admin
                 </NavLink>
+
+                {userLogged && (
+                    <button
+                        onClick={logout}
+                        className="ml-4 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600">
+                        Logout
+                    </button>
+                )}
             </div>
         </nav>
     );

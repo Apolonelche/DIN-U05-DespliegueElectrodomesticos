@@ -194,6 +194,24 @@ footer p {
   background: #181818;
 }
 
+.eliminar {
+  background-color: red;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin-top: 3rem;
+  align-self:self-end;
+  font-weight: 600;
+  transition: 0.25s ease;
+  border: #181818 1px solid;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.eliminar:hover {
+  background-color: darkred; 
+  color: white;
+}
+
 /* ======================================================= NAVBAR STYLES ============================================ */
 .nav {
   width: 100%;

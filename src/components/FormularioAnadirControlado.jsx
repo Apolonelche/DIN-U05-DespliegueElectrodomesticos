@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useCreateElectrodomestico } from "../hooks/useCreateElectrodomestico";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Componente que muestra un formulario para añadir un electrodoméstico.
@@ -17,6 +19,10 @@ export default function AnadirElectrodomesticoC() {
     });
 
     const [errors, setErrors] = useState({});
+    const { addElectrodomestico } = useCreateElectrodomestico();
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const navigate = useNavigate();
+    const fileInputRef = useRef(null);
 
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -31,7 +37,7 @@ export default function AnadirElectrodomesticoC() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const newErrors = {};
@@ -64,7 +70,33 @@ export default function AnadirElectrodomesticoC() {
 
         setErrors(newErrors);
 
-        if (Object.keys(newErrors).length > 0) return;
+        if (Object.keys(newErrors).length > 0) {
+            return
+        } else {
+            setIsSubmitting(true);
+            try {
+                await addElectrodomestico(formData);
+                alert(`¡El electrodoméstico "${formData.nombre}" se ha guardado en la API!`);
+
+                // Limpiar formulario
+                setFormData({
+                    nombre: "",
+                    marca: "",
+                    precio: "",
+                    descripcion: "",
+                    imagen: ""
+                });
+                // Redirigir a la página de electrodomésticos
+                navigate("/electrodomesticos");
+
+                if (fileInputRef.current) fileInputRef.current.value = null;
+            } catch (error) {
+                console.error("Error al enviar:", error);
+                alert("No se pudo conectar con la API.");
+            } finally {
+                setIsSubmitting(false);
+            }
+        };
 
         console.log("Datos enviados:", formData);
     };
