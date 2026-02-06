@@ -41,12 +41,15 @@ Electron no sustituye a las webs ya que son mucho mas cómodas de acceder y util
 ## 4. Capturas de la aplicación de escritorio funcionando
 
 ### Pantalla principal
-![Pantalla principal](ruta/a/la/captura1.png)
+![alt text](./images/PaginaPrincipal.png)
+
+### Lista de productos
+![alt text](./images/Productos.png)
 
 ### Detalle de producto
-![Detalle de producto](ruta/a/la/captura2.png)
+![alt text](./images/Detalle.png)
 
-### Eliminación de producto
-![Eliminación de producto](ruta/a/la/captura3.png)
+### Admin
+![alt text](./images/Admin.png)
 
 ---
