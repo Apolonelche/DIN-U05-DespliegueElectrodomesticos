@@ -41,7 +41,7 @@ export default function Electrodomesticos() {
                     filteredElectrodomesticos.map((electrodomestico, index) => (
                         <Link to={`/details/${electrodomestico._id}`} key={index}>
                             <List
-                                key={index}
+                                id={electrodomestico._id}     // ID para el botón de eliminar
                                 nombre={electrodomestico.nombre}     // Título del card
                                 foto={electrodomestico.imagen}     // Imagen del card
                             >

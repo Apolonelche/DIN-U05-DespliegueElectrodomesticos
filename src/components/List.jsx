@@ -1,3 +1,5 @@
+import React from 'react';
+import DeleteButton from './DeleteButton.jsx';
 /**
  * List
  *
@@ -9,7 +11,7 @@
  *  - descripcion (opcional): Contenido adicional o descripción.
  *  - children (opcional): Contenido extra que se puede mostrar dentro de la tarjeta.
  */
-function List({ foto, nombre, children }) {
+function List({ id, foto, nombre, children }) {
   return (
     <article 
       className="card"
@@ -29,8 +31,9 @@ function List({ foto, nombre, children }) {
         )}
       </figure>
 
-      <header>
+      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2>{nombre}</h2>
+        <DeleteButton id={id}/>
       </header>
 
       {children && (

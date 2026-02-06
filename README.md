@@ -1,16 +1,52 @@
-# React + Vite
+# Despliegue Martin Davia Mora
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. ¿Dónde está desplegada cada parte?
 
-Currently, two official plugins are available:
+### Frontend (Web)
+El frontend está desplegado en Vercel, se puede acceder mediante la siguiente URL: https://din-u05-despliegue-electrodomestico.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Backend / API
+La api está desplegada mediante Render, se puede acceder mediante el enlace:
+https://din-u05-electrodomesticosapi.onrender.com
 
-## React Compiler
+### Aplicación de escritorio
+Está desplegada mediante Electron. Se puede acceder mediante el archivo Electrodomesticos.exe
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 2. Problemas encontrados durante el despliegue
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Problema 1:**
+El primer problema que tuve fué un fallo a la hora de conectar la api con MongoDB ya que me daba error de atenticación del usuario. Para solucionarlo tuve que cambiar la contraseña y poner la misma y se arregló.
+
+- **Problema 2:**
+El segundo problema que tuve ha sido a la hora de hacer el ``run electron-pack`` porque las dependencias de electron del package.json, tenían que estar en devDependencies 
+
+---
+
+## 3. Diferencias entre aplicación web y aplicación de escritorio
+
+### Ventajas del despliegue web frente al de escritorio
+
+- Accesible dese cualquier plataforma
+- No hace falta descargar nada (salvo navegador)
+- Puedes acceder donde quieras mientras tengas conexión
+
+### ¿Por qué Electron no sustituye a una web?
+
+Electron no sustituye a las webs ya que son mucho mas cómodas de acceder y utilizar. Por ejemplo, a la hora de actualzar una web, es instantáneo pero en Electron tienes que descargarte la nueva versión, Electron consume recursos de tu dispositivo y al final, es menos accesible.
+
+---
+
+## 4. Capturas de la aplicación de escritorio funcionando
+
+### Pantalla principal
+![Pantalla principal](ruta/a/la/captura1.png)
+
+### Detalle de producto
+![Detalle de producto](ruta/a/la/captura2.png)
+
+### Eliminación de producto
+![Eliminación de producto](ruta/a/la/captura3.png)
+
+---
