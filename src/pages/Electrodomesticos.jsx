@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 import SearchBar from "../components/SearchBar.jsx"
 import { useState, useMemo } from "react";
 import { useGetElectrodomesticos } from "../hooks/useGetElectrodomesticos.js";
+import  useVoiceRecognition  from "../hooks/useVoiceRecognition.js";
+import { Mic } from "lucide-react";
 
 /**
  * Electrodomesticos
@@ -16,6 +18,7 @@ export default function Electrodomesticos() {
     const { electrodomesticos, loadElectrodomesticos, loading, error } = useGetElectrodomesticos();
     const [searchTerm, setSearchTerm] = useState("");
 
+
     const filteredElectrodomesticos = useMemo(() => {
         if (!electrodomesticos) return [];
         if (!searchTerm) return electrodomesticos;
@@ -26,6 +29,7 @@ export default function Electrodomesticos() {
         );
     }, [searchTerm, electrodomesticos]);
 
+
     return (
         <>
             <p className="contenedor__h2">Listado de Electrodomésticos</p>
@@ -35,6 +39,7 @@ export default function Electrodomesticos() {
                 onSearchChange={setSearchTerm}
                 placeholder="Buscar electrodomésticos por nombre..."
             />
+
 
             <div className="listado">
                 {filteredElectrodomesticos.length > 0 ? (
